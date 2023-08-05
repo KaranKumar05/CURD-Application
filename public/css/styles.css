@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.postCard{
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+    padding: 1em;
+}
+.postCard > h3{
+    border-bottom: 1px solid black;
+    line-height: 20px;
+}
+.postCard > p{
+    line-height: 20px;
+}

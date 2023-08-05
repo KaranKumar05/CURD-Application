@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curd Application</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body onload="getAllPost()">
+    <form onsubmit="createPost(); return false">
+      <label for="postTitle">Post Title</label>
+      <input type="text" id="postTitle" />
+      <br />
+      <label for="postText">Post Text</label>
+      <input type="text" id="postText" />
+      <br />
+      <button type="submit">Post</button>
+    </form>
+    <div id="result"></div>
+    <br><br><br>
+    <div id="posts"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/js/script.js"></script>
+    
+  </body>
+</html>
