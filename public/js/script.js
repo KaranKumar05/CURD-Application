@@ -29,8 +29,8 @@ window.getAllPost = () => {
                     <div id="postId-${eachPost.id}" class = "postCard">
                         <h3>${eachPost.title}</h3>
                         <p>${eachPost.text}</p>
-                        <button onclick="delPost('${eachPost.id}')">Delete</button>
-                        <button onclick="editPost('${eachPost.id}','${eachPost.title}','${eachPost.text}')">Edit</button>
+                        <button class="deleteBtn" onclick="delPost('${eachPost.id}')">Delete</button>
+                        <button class="editBtn" onclick="editPost('${eachPost.id}','${eachPost.title}','${eachPost.text}')">Edit</button>
                     </div>
                     <br />`
             })
@@ -47,12 +47,10 @@ window.editPost = (postId, title, text) => {
     console.log(text);
     document.querySelector(`#postId-${postId}`).innerHTML =
         `
-    <form onsubmit= savePost('${postId}')>
-       Title: <input type= "text" value = '${title}' id='titleToEdit-${postId}' />
-       <br />
-       Text: <input type= "text" value ='${text}' id='textToEdit-${postId}'/>
-       <br />
-       <button>Save<button>
+    <form onsubmit= savePost('${postId}') id="editPostFrom">
+       <input type= "text" value = '${title}' id='titleToEdit-${postId}' />
+       <input type= "text" value ='${text}' id='textToEdit-${postId}'/>
+       <button id="saveBtn">Save<button>
     </form>
     `
 }
@@ -80,7 +78,7 @@ window.savePost = (postId) => {
 // Delete Post 
 window.delPost = (postId) => {
     console.log(postId);
-    
+
     axios.delete(`/api/v1/post/${postId}`)
         .then(function (Response) {
             console.log(Response.data)
